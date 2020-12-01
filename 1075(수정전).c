@@ -4,24 +4,20 @@
 int* Last_Two(int, int);
 int third(int);
 void Min(int[]);
-void showarray(int* param) {
-	for (int i = 0; i < 5; i++) {
-		printf("%d\n", param[i]);
-	}
-}
+
 
 int main() {
 	int n, f, result;
-	//scanf("%d", &n);
-	//scanf("%d", &f);
-	//int* ptr = Last_Two(n, f);
+	scanf("%d", &n);
+	scanf("%d", &f);
+	int* ptr = Last_Two(n, f);
 	for (int i = 0; i < 4; i++) {
-		//printf("%d\n", *(ptr+i));
+		printf("%d\n", *(ptr+i));
 	}
 	int arr[100] = { 1,5,7 };
 	showarray(arr);
 
-	//printf("%d %d %d\n", ptr[0], ptr[1], ptr[65]);
+	printf("%d %d %d\n", ptr[0], ptr[1], ptr[65]);
 
 	//Min(ptr);
 
@@ -29,20 +25,20 @@ int main() {
 
 int* Last_Two(int n, int f) {
 	int i = 0;
-	int arr[100] = { 0 };	//°¡Àå µÚ µÎÀÚ¸®¸¦ ÀúÀåÇÒ ¹è¿­
-	int N_third;		//nÀÇ µÚ¿¡¼­ ¼¼¹øÂ° ¼ýÀÚ
+	int arr[100] = { 0 };	//ê°€ìž¥ ë’¤ ë‘ìžë¦¬ë¥¼ ì €ìž¥í•  ë°°ì—´
+	int N_third;		//nì˜ ë’¤ì—ì„œ ì„¸ë²ˆì§¸ ìˆ«ìž
 	N_third = third(n);
 
-	while (N_third == third(n)) {		//¼¼¹øÂ° ¼ýÀÚ°¡ ¹Ù²î¸é Å»Ãß
+	while (N_third == third(n)) {		//ì„¸ë²ˆì§¸ ìˆ«ìžê°€ ë°”ë€Œë©´ íƒˆì¶”
 
-		if (n % f == 0) {			//nÀÌ f·Î ³ª´©¾î¶³¾îÁö¸é
-			arr[i] = n % 100;		//µÚÀÇ µÎÀÚ¸®¸¦ arr¹è¿­¿¡ ÀúÀå
-			n = n - f;				//nÀ» f¸¸Å­ ÁÙ¿©ÁÜ
+		if (n % f == 0) {			//nì´ fë¡œ ë‚˜ëˆ„ì–´ë–¨ì–´ì§€ë©´
+			arr[i] = n % 100;		//ë’¤ì˜ ë‘ìžë¦¬ë¥¼ arrë°°ì—´ì— ì €ìž¥
+			n = n - f;				//nì„ fë§Œí¼ ì¤„ì—¬ì¤Œ
 			i++;
 		}
 
-		else {						//nÀÌ f·Î ³ª´©¾î¶³¾îÁöÁö¾ÊÀ¸¸é
-			n = n - (n % f);		//nÀ» f·Î ³ª´©¾î¶³Áö°ÔÇÔ
+		else {						//nì´ fë¡œ ë‚˜ëˆ„ì–´ë–¨ì–´ì§€ì§€ì•Šìœ¼ë©´
+			n = n - (n % f);		//nì„ fë¡œ ë‚˜ëˆ„ì–´ë–¨ì§€ê²Œí•¨
 		}
 
 
@@ -51,9 +47,9 @@ int* Last_Two(int n, int f) {
 		//printf("%d\n", arr[i]);
 	}
 
-	if (arr[0] == 0) {		//¸¸¾à arr¹è¿­¿¡ ¾Æ¹«°Íµµ ÀúÀåÀÌ ¾ÈµÅÀÖÀ¸¸é
+	if (arr[0] == 0) {		//ë§Œì•½ arrë°°ì—´ì— ì•„ë¬´ê²ƒë„ ì €ìž¥ì´ ì•ˆë¼ìžˆìœ¼ë©´
 		n = n + f;
-		arr[0] = n;		//ÃÖ¼Ú°ªÀ» ÀúÀåÇØÁÜ
+		arr[0] = n;		//ìµœì†Ÿê°’ì„ ì €ìž¥í•´ì¤Œ
 	}
 
 
